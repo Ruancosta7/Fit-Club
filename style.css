@@ -1,0 +1,807 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins';
+  color: #f8f8ff;
+}
+
+.padding {
+  padding: 10px 20px;
+}
+
+body {
+  background-color: #101010;
+}
+
+button {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style-type: none;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.logo img {
+  height: 2.5rem;
+}
+
+header .join {
+  font-size: 1rem;
+  background-color: rgba(255, 170, 0, 1);
+  color: #f8f8ff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+
+#navegacao-principal {
+  display: none;
+}
+
+#principal {
+  position: relative;
+}
+
+#principal::before {
+  content: '';
+  display: block;
+  z-index: -1;
+  filter: blur(50px);
+  border-radius: 50%;
+  top: 2rem;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(255, 170, 0, 1);
+  position: absolute;
+}
+
+#principal .texto {
+  display: grid;
+  gap: 10px;
+}
+
+#principal .texto h4 {
+  font-size: .9rem;
+  color: rgba(255, 170, 0, 1);
+}
+
+#principal .texto h1 {
+  letter-spacing: 1px;
+  font-size: 2.5rem;
+}
+
+#principal .texto span {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-color: #f8f8ff;
+  -webkit-text-stroke-width: 1px;
+}
+
+#principal .texto button {
+  background-color: rgba(255, 170, 0, 1);
+  margin-right: auto;
+  padding: 5px 10px;
+  border-radius: 3px;
+  border: none;
+}
+
+@keyframes top-bottom{
+  0%{
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+#principal .texto{
+  animation: top-bottom 1s ease;
+}
+
+#principal .banner{
+  animation: top-bottom 1s ease;
+}
+
+#program {
+  display: grid;
+}
+
+#program-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.program-card {
+  margin: 20px auto;
+  display: grid;
+  gap: 10px;
+  align-items: center;
+  background-color: rgba(100, 100, 100, .4);
+  padding: 20px 20px;
+  width: 80%;
+  border-radius: 4px;
+}
+
+.program-card img {
+  height: 30px;
+  background-color: rgba(255, 170, 0, 1);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.program-card p {
+  font-size: 1.1rem;
+  max-width: 30ch;
+}
+
+.program-card button {
+  font-size: 1.1rem;
+  border: 2px solid rgba(255, 170, 0, 1);
+  background-color: transparent;
+  width: fit-content;
+  padding: 3px 10px;
+  border-radius: 3px;
+  font-weight: 500;
+  transition: .3s;
+}
+
+.program-card button:is(:focus, :hover) {
+  background-color: rgba(255, 170, 0, 1);
+}
+
+#banners {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 5px;
+}
+
+#banners img:nth-child(1) {
+  border-radius: 5px;
+  position: relative;
+  max-width: 90%;
+  margin-left: auto;
+}
+
+#banners img:nth-child(2) {
+  position: relative;
+  max-width: 70%;
+  margin-right: auto;
+  border-radius: 5px;
+}
+
+#class-text {
+  grid-column: 1;
+  grid-row: 1;
+  display: grid;
+  gap: 10px;
+}
+
+#class-text h1 {
+  font-size: 2rem;
+}
+
+#class-text p {
+  font-size: 1.2rem;
+}
+
+#class-text button {
+  padding: 5px 10px;
+  background-color: rgba(255, 170, 0, 1);
+  width: fit-content;
+  border: none;
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+#join {
+  display: grid;
+  gap: 10px;
+}
+
+#join h1 {
+  font-size: 2rem;
+}
+
+#join p {
+  font-size: 1.2rem;
+}
+
+.join-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.join-card {
+  display: grid;
+  gap: 5px;
+  align-items: center;
+  background-color: rgba(100, 100, 100, .4);
+  margin: 20px auto;
+  width: 80%;
+  padding: 10px 20px;
+}
+
+.join-card img {
+  height: 30px;
+  background-color: rgba(255, 170, 0, 1);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.join-card p {
+  font-size: 1.2rem;
+}
+
+#planos-text h1 {
+  font-size: 2rem;
+}
+
+#planos-text p {
+  font-size: 1.2rem;
+}
+
+#planos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.planos-card {
+  display: grid;
+  width: 80%;
+  padding: 10px 20px;
+  background-color: rgba(100, 100, 100, .4);
+  margin: 20px auto;
+  align-items: space-around;
+  height: 300px;
+  border: 3px solid transparent;
+  transition: .3s;
+  border-radius: 4px;
+}
+
+.planos-card:is(:focus, :hover) {
+  border: 3px solid rgba(255, 170, 0, 1);
+  transform: scale(1.02);
+}
+
+.planos-card h2::after {
+  content: '';
+  display: block;
+  margin: 10px auto;
+  width: 100%;
+  height: .2rem;
+  background-color: #f8f8ff;
+  border-radius: 50px;
+}
+
+.planos-card:nth-child(2) h2::after {
+  background-color: rgba(255, 170, 0, 1);
+}
+
+.planos-card h2 {
+  font-size: 2rem;
+}
+
+.planos-card h4 {
+  font-size: 1.5rem;
+}
+
+.planos-card p {
+  font-size: 1.2rem;
+}
+
+.planos-card span {
+  font-size: 1rem;
+  color: #959595;
+  font-style: italic;
+}
+
+.planos-card img {
+  display: inline-block;
+  height: 20px;
+  position: relative;
+  top: 3px;
+  margin-right: 5px;
+}
+
+.planos-card button {
+  display: inline-block;
+  background-color: transparent;
+  border: 1px solid rgba(255, 170, 0, 1);
+  font-size: 1.1rem;
+  padding: 3px 10px;
+  width: fit-content;
+  height: fit-content;
+  transition: .3s;
+}
+
+.planos-card button:is(:focus, :hover) {
+  background-color: rgba(255, 170, 0, 1);
+}
+
+footer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.links {
+  display: flex;
+  gap: 10px;
+}
+
+footer .fitclub .links img {
+  height: 25px;
+}
+
+.links a {
+  border: 2px solid rgba(255, 170, 0, 1);
+  padding: 8px;
+  border-radius: 50%;
+}
+
+footer div:not(.links) {
+  display: grid;
+  margin: 10px;
+  gap: 10px;
+}
+
+footer h3 {
+  font-size: 1.5rem;
+}
+
+footer a {
+  font-size: 1.2rem;
+}
+
+footer a:is(:active, :hover) {
+  color: rgba(255, 170, 0, 1);
+}
+
+#end-page {
+  text-align: center;
+  padding: 10px 20px;
+}
+
+@media (min-width:768px) {
+
+  .padding {
+    padding: 20px 30px;
+  }
+
+  #principal {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+  }
+
+  #principal .texto {
+    display: grid;
+    place-content: center;
+  }
+
+  #principal .texto h1 {
+    font-size: 3rem;
+  }
+
+  #principal .texto p,
+  button {
+    font-size: 1.2rem;
+  }
+
+  .programa-titulo h1 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .program-card img {
+    height: 40px;
+  }
+
+  .program-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .program-card p {
+    font-size: 1.2rem;
+  }
+
+  .program-card button {
+    font-size: 1.3rem;
+  }
+
+  #class {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #banners {
+    gap: 10px;
+  }
+
+  #banners img:nth-child(2) {
+    max-width: 90%;
+  }
+
+  #class-text {
+    display: grid;
+    place-content: start;
+    gap: 15px;
+  }
+
+  #class-text h1 {
+    font-size: 2.5rem;
+  }
+
+  #class-text p {
+    font-size: 1.2rem;
+  }
+
+  #class-text button {
+    font-size: 1.3rem;
+  }
+
+  #join-title {
+    text-align: center;
+  }
+
+  #join-title h1 {
+    font-size: 2.5rem;
+  }
+
+  #join-title p {
+    font-size: 1.3rem;
+  }
+
+  #planos-text {
+    text-align: center;
+  }
+
+  #planos-text h1 {
+    font-size: 2.5rem;
+  }
+
+  #planos-text p {
+    font-size: 1.3rem;
+  }
+
+  footer {
+    justify-content: space-between;
+  }
+}
+
+@media (min-width:1024px) {
+
+  .padding {
+    padding: 30px 80px;
+  }
+
+  header .logo img {
+    height: 30px;
+  }
+  header .join{
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  #navegacao-principal {
+    display: initial;
+  }
+
+  #navegacao-principal ul {
+    display: flex;
+  }
+
+  #navegacao-principal ul li {
+    margin: 0px 20px;
+  }
+
+  #navegacao-principal ul li a {
+    position: relative;
+  }
+
+  #navegacao-principal ul li a::after {
+    display: block;
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 0%;
+    height: 3px;
+    border-radius: 50px;
+    background-color: transparent;
+    transition: .4s;
+  }
+
+  #navegacao-principal ul li a:hover::after {
+    display: block;
+    position: absolute;
+    left: 0;
+    content: '';
+    width: 90%;
+    height: 3px;
+    border-radius: 50px;
+    background-color: rgba(255, 170, 0, 1);
+    transition: .4s;
+  }
+
+  #principal {
+    grid-template-columns: 1.1fr 1fr;
+  }
+
+  #principal .texto {
+    place-content: start;
+    gap: 20px;
+  }
+
+  #principal .texto h1 {
+    font-size: 4rem;
+  }
+
+  #principal .texto p {
+    font-size: 1rem;
+  }
+
+  #principal .texto button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  #principal .banner img {
+    max-width: 60%;
+    margin: 0 auto;
+  }
+
+  #principal::before {
+    left: 80px;
+  }
+
+  @keyframes top-bottom{
+    0%{
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+  }
+
+  .programa-titulo h1 {
+    font-size: 2rem;
+  }
+
+  #program-grid {
+    padding: 0px 80px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+  }
+
+  .program-card {
+    width: 90%;
+    margin: 0px 0px;
+    height: 300px;
+    border: 2px solid transparent;
+    transition: .3s;
+  }
+
+  .program-card:hover {
+    border: 2px solid rgba(255, 170, 0, 1);
+  }
+
+  .program-card img {
+    height: 20px;
+  }
+
+  .program-card h3 {
+    font-size: 1rem;
+  }
+
+  .program-card p {
+    font-size: 1rem;
+  }
+
+  .program-card button {
+    font-size: .8rem;
+  }
+
+  #class {
+    gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+  }
+
+  #class #banners img:nth-child(1) {
+    max-width: 60%;
+  }
+
+  #class #banners img:nth-child(2) {
+    max-width: 60%;
+  }
+
+  #class-text {
+    text-align: left;
+  }
+
+  #class-text h1 {
+    font-size: 2rem;
+  }
+
+  #class-text p {
+    font-size: 1rem;
+  }
+
+  #class-text button {
+    font-size: 1rem;
+    margin-right: auto;
+    padding: 10px 20px;
+  }
+
+  #join {
+    position: relative;
+  }
+
+  #join-title {
+    position: relative;
+  }
+
+  /* .join-grid {
+    padding: 30px 80px;
+  } */
+
+  .join-card img {
+    height: 30px;
+  }
+
+  .join-card h3 {
+    font-size: 1rem;
+  }
+
+  .join-card p {
+    font-size: .1rem;
+  }
+
+  #planos-text h1 {
+    font-size: 2rem;
+  }
+
+  #planos-text p {
+    font-size: 1.2rem;
+  }
+
+  #planos-grid {
+    padding: 30px 80px;
+  }
+
+  .planos-card {
+    display: grid;
+    align-items: center;
+  }
+
+  .planos-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .planos-card h4 {
+    font-size: 1.2rem;
+  }
+
+  .planos-card p {
+    font-size: 1rem;
+  }
+
+  .planos-card button {
+    font-size: .8rem;
+  }
+
+  footer .fitclub .links img {
+    height: 20px;
+  }
+
+  footer a,
+  p {
+    font-size: .9rem;
+  }
+}
+
+@media (min-width:1400px) {
+  #principal {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #principal::before {
+    top: 30%;
+  }
+
+  #principal .texto h1 {
+    font-size: 6rem;
+  }
+
+  #principal .texto {
+    place-content: center;
+  }
+
+  .program-card {
+    height: 250px;
+  }
+
+  .program-card img {
+    height: 30px;
+  }
+
+  .program-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .program-card button {
+    font-size: 1rem;
+
+  }
+
+  #class {
+    place-items: initial;
+  }
+
+  #class #banners img:nth-child(1) {
+    max-width: 100%;
+  }
+
+  #class #banners img:nth-child(2) {
+    max-width: 100%;
+  }
+
+  #class-text {
+    gap: 20px;
+    place-content: center;
+    grid-column: 1;
+  }
+
+  #class-text h1 {
+    font-size: 3rem;
+  }
+
+  #join {
+    position: relative;
+  }
+
+  #join-title img {
+    margin: 30px auto 0px auto;
+  }
+
+  #join-title {
+    position: relative;
+  }
+
+  .join-grid {
+    position: absolute;
+    bottom: -6rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .join-card {
+    position: relative;
+    width: 70%;
+    background-color: #303030;
+  }
+
+  #planos {
+    margin-top: 100px;
+  }
+
+  .planos-card {
+    width: 70%;
+    height: 300px;
+  }
+
+  .planos-card button{
+    font-size: 1rem;
+  }
+}
+
